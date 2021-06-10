@@ -1,6 +1,7 @@
 package com.vtrack.test.sprint0.positivetest_ts1;
 
 
+import com.vtrack.test.useablemethods.pages.MainPage;
 import com.vtrack.test.useablemethods.utilities.WebDriverFactory;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -10,6 +11,7 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
+import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 
 public class TS1_01 {
@@ -50,34 +52,18 @@ public class TS1_01 {
     }
 
     // Step 2 - Enter correct user name for truck driver
-    @Test
-    public void test2() {
-        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-        WebElement username = driver.findElement(By.cssSelector("input[id='prependedInput']"));
-        username.sendKeys("user10");
-
-    }
-
     //  Step 4 - Click login button
-    @Test
-    public void test3() {
-        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-        WebElement password = driver.findElement(By.cssSelector("input[id='prependedInput2']"));
-        password.sendKeys("UserUser123");
-
-
-    }
-
     //Step 4 - Click login button
+
     @Test
-    public void test4() {
-        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-        WebElement buttonLogin = driver.findElement(By.cssSelector("button[id='_submit']"));
-        buttonLogin.click();
-
-
+    public void test2() throws IOException {
+        MainPage.LoginToAVTrackDriverAccount(driver);
     }
-    @Test(priority = 5)
+
+
+
+
+    @Test()
   //  Step 5 - Truck driver should see first and last name on top right corner
     public void test5(){
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);

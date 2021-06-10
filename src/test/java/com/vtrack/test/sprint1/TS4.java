@@ -12,6 +12,7 @@ import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.Test;
 
+import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 
 public class TS4 {
@@ -22,9 +23,9 @@ public class TS4 {
         driver.close();
     }
     @Test
-    public void test1(){
+    public void test1() throws IOException {
         Locators locators = new Locators();
-        MainPage.LoginToVTrackAccount(driver);
+        MainPage.LoginToAVTrackDriverAccount(driver);
         driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
         WebElement fleet = driver.findElement(By.xpath(locators.getFleet()));
         fleet.click();

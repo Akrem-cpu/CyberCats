@@ -12,6 +12,7 @@ import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.Test;
 
+import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 
 public class TS3 {
@@ -25,8 +26,8 @@ public class TS3 {
 
 
     @Test
-    public void test1() throws InterruptedException {
-        MainPage.LoginToVTrackAccount(driver);
+    public void test1() throws InterruptedException, IOException {
+        MainPage.LoginToAVTrackDriverAccount(driver);
         Locators locators = new Locators();
 
         /** navigate to vehicle */
