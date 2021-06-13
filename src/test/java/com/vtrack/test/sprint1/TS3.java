@@ -1,6 +1,7 @@
 package com.vtrack.test.sprint1;
 
 
+import com.vtrack.test.useablemethods.pages.Car_Entities_Page;
 import com.vtrack.test.useablemethods.pages.MainPage;
 import com.vtrack.test.useablemethods.utilities.BrowserUtils;
 import com.vtrack.test.useablemethods.utilities.Locators;
@@ -27,15 +28,11 @@ public class TS3 {
 
     @Test
     public void test1() throws InterruptedException, IOException {
-        MainPage.LoginToAVTrackDriverAccount(driver);
+        MainPage. LoginToAVTrackDriverAccount(driver);
         Locators locators = new Locators();
 
         /** navigate to vehicle */
-        WebElement fleet = driver.findElement(By.xpath(locators.getFleet()));
-        fleet.click();
-        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-        WebElement vehicles = driver.findElement(By.xpath(locators.getVehicles()));
-        vehicles.click();
+        Car_Entities_Page.getCar_Entities_Page(driver);
 
         /** clicking on car grid */
         WebElement carGrid = driver.findElement(By.xpath("//tr[@class= 'grid-row row-click-action']//td"));
