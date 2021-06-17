@@ -15,9 +15,6 @@ import java.util.concurrent.TimeUnit;
 
 public class MainPage {
     public static void LoginToAVTrackDriverAccount(WebDriver driver) throws IOException {
-        driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
-        driver.get(ConfigurationReader.getProperty("env1"));
-        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         WebElement username = driver.findElement(By.cssSelector("input[id='prependedInput']"));
         username.sendKeys(ConfigurationReader.getProperty("usernamefordriver"));
         WebElement password = driver.findElement(By.cssSelector("input[id='prependedInput2']"));

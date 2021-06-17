@@ -5,11 +5,13 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
+import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 
 public class Car_Entities_Page {
 
-     public static void getCar_Entities_Page(WebDriver driver){
+     public static void getCar_Entities_Page(WebDriver driver) throws IOException {
+         MainPage.LoginToAVTrackDriverAccount(driver);
          Locators locators = new Locators();
          WebElement fleet = driver.findElement(By.xpath(locators.getFleet()));
          fleet.click();
