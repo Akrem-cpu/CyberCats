@@ -23,6 +23,7 @@ public class TS1 extends TestBase {
 
     @Test
     public void test1() throws InterruptedException, IOException {
+
         MainPage.LoginToAVTrackDriverAccount(Driver.getDriver());
         /** navigate to vehicle */
         Car_Entities_Page.getCar_Entities_Page(Driver.getDriver());
