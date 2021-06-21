@@ -4,10 +4,16 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
 
 import java.util.concurrent.TimeUnit;
 
-public abstract class Driver {
+public class Driver {
+
+    private Driver(){}
+
+
     private static WebDriver driver;
 
     public static WebDriver getDriver() {
@@ -39,5 +45,11 @@ public abstract class Driver {
 
     }
 
+     public static void closeDriver(){
+        if (driver!=null){
+            driver.quit();
+            driver=null;
+        }
+     }
 
 }

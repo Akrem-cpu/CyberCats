@@ -14,9 +14,11 @@ import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
 public class MainPage {
-    public static void LoginToAVTrackDriverAccount(WebDriver driver) throws IOException {
+
+
+    public static void LoginToAVTrackDriverAccount(WebDriver driver,String keyword)  {
         WebElement username = driver.findElement(By.cssSelector("input[id='prependedInput']"));
-        username.sendKeys(ConfigurationReader.getProperty("usernamefordriver"));
+        username.sendKeys(ConfigurationReader.getProperty(keyword));
         WebElement password = driver.findElement(By.cssSelector("input[id='prependedInput2']"));
         password.sendKeys(ConfigurationReader.getProperty("password"));
         WebElement buttonLogin = driver.findElement(By.cssSelector("button[id='_submit']"));

@@ -57,7 +57,7 @@ public class TS1_01 {
 
     @Test
     public void test2() throws IOException {
-        MainPage.LoginToAVTrackDriverAccount(driver);
+        /*MainPage.LoginToAVTrackDriverAccount(driver);*/
     }
 
 

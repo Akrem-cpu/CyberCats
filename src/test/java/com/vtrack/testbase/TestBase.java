@@ -1,12 +1,13 @@
 package com.vtrack.testbase;
 
+import com.vtrack.test.useablemethods.utilities.BrowserUtils;
 import com.vtrack.test.useablemethods.utilities.ConfigurationReader;
 import com.vtrack.test.useablemethods.utilities.Driver;
 import com.vtrack.test.useablemethods.utilities.WebDriverFactory;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.*;
 
-public class TestBase {
+public abstract class TestBase {
 
   @BeforeMethod
   public void setup(){
@@ -14,7 +15,8 @@ public class TestBase {
   }
   @AfterMethod
     public void finishUp(){
-      Driver.getDriver().close();
+    BrowserUtils.sleep(2);
+      Driver.closeDriver();
   }
 
 

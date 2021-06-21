@@ -4,8 +4,10 @@ package com.vtrack.test.sprint1;
 import com.vtrack.test.useablemethods.pages.Car_Entities_Page;
 import com.vtrack.test.useablemethods.pages.MainPage;
 import com.vtrack.test.useablemethods.utilities.BrowserUtils;
+import com.vtrack.test.useablemethods.utilities.Driver;
 import com.vtrack.test.useablemethods.utilities.Locators;
 import com.vtrack.test.useablemethods.utilities.WebDriverFactory;
+import com.vtrack.testbase.TestBase;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -16,53 +18,26 @@ import org.testng.annotations.Test;
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 
-public class TS4 {
-    WebDriver driver = WebDriverFactory.getDriver("Chrome");
-    @AfterClass
-    public void finish() throws InterruptedException {
-        BrowserUtils.sleep(3);
-        driver.close();
-    }
-    @Test
-    public void test1() throws IOException {
-        Locators locators = new Locators();
-        MainPage.LoginToAVTrackDriverAccount(driver);
-        Car_Entities_Page.getCar_Entities_Page(driver);
+public class TS4 extends TestBase {
+
+    @Test(priority = 4)
+    public void test1()  {
+        Car_Entities_Page.getCar_Entities_Page(Driver.getDriver());
         BrowserUtils.sleep(5);
-        WebElement grid = driver.findElement(By.xpath("//a[@title='Grid Settings']"));
+        WebElement grid = Driver.getDriver().findElement(By.xpath(Locators.GRID));
         grid.click();
-
-
-    }
-
-    @Test
-    public void test2(){
-
-        WebElement id = driver.findElement(By.xpath("//tbody[@class='ui-sortable']//tr[1]//td[1]"));
+        WebElement id = Driver.getDriver().findElement(By.xpath("//tbody[@class='ui-sortable']//tr[1]//td[1]"));
         BrowserUtils.sleep(2);
         id.click();
-        WebElement x = driver.findElement(By.xpath("//span[.='×'] "));
+        WebElement x = Driver.getDriver().findElement(By.xpath("//span[.='×']"));
         x.click();
         BrowserUtils.sleep(5);
-        WebElement rest = driver.findElement(By.xpath("//a[@title='Reset']"));
+        WebElement rest = Driver.getDriver().findElement(By.xpath("//a[@title='Reset']"));
         rest.click();
-    /*    id = driver.findElement(By.xpath("//label[@for='column-c3497']"));*/
         Assert.assertFalse(id.isSelected());
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
     }
+
 }
