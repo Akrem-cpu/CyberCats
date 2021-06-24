@@ -1,7 +1,7 @@
 package com.vtrack.test.sprint0.positivetest_ts2;
 
 
-import com.vtrack.test.useablemethods.utilities.WebDriverFactory;
+import com.vtrack.useablemethods.utilities.WebDriverFactory;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;

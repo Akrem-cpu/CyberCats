@@ -1,4 +1,4 @@
-package com.vtrack.test.useablemethods.utilities;
+package com.vtrack.useablemethods.utilities;
 
 import java.util.ArrayList;
 import java.util.Arrays;

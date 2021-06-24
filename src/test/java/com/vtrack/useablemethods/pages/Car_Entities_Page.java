@@ -1,7 +1,7 @@
-package com.vtrack.test.useablemethods.pages;
+package com.vtrack.useablemethods.pages;
 
-import com.vtrack.test.useablemethods.utilities.BrowserUtils;
-import com.vtrack.test.useablemethods.utilities.Locators;
+import com.vtrack.useablemethods.utilities.BrowserUtils;
+import com.vtrack.useablemethods.utilities.Locators;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;

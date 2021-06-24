@@ -1,4 +1,4 @@
-package com.vtrack.test.useablemethods.utilities;
+package com.vtrack.useablemethods.utilities;
 
 public class Locators {
    public final static String FLEET = "//span[@class='title title-level-1'][1]";

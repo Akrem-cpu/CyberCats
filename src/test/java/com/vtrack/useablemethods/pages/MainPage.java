@@ -1,17 +1,9 @@
-package com.vtrack.test.useablemethods.pages;
+package com.vtrack.useablemethods.pages;
 
-import com.github.javafaker.File;
-import com.vtrack.test.useablemethods.utilities.ConfigurationReader;
-import com.vtrack.test.useablemethods.utilities.Credential;
+import com.vtrack.useablemethods.utilities.ConfigurationReader;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.util.Properties;
-import java.util.concurrent.TimeUnit;
 
 public class MainPage {
 
